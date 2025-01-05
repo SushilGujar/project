@@ -65,6 +65,7 @@ export function useShoppingList(userId: string | undefined) {
         )
       `)
       .eq('user_id', userId)
+      .order('completed', { ascending: true })
       .order('created_at', { ascending: false });
     
     if (error) {
